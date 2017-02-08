@@ -41,10 +41,9 @@ class LDAPAuthenticator(Authenticator):
         """
     )
 
-
     allowed_groups = List(
-	config=True,
-	help="List of LDAP Group DNs whose members are allowed access"
+        config=True,
+        help="List of LDAP Group DNs whose members are allowed access"
     )
 
     valid_username_regex = Unicode(
@@ -86,10 +85,10 @@ class LDAPAuthenticator(Authenticator):
             if self.allowed_groups:
                 for group in self.allowed_groups:
                     if conn.search(
-                        group,
-                        search_scope=ldap3.BASE,
-                        search_filter='(member={userdn})'.format(userdn=userdn),
-                        attributes=['member']
+                            group,
+                            search_scope=ldap3.BASE,
+                            search_filter='(member={userdn})'.format(userdn=userdn),
+                            attributes=['member']
                     ):
                         return username
             else:

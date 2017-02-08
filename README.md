@@ -16,7 +16,7 @@ is welcome to do so! There's no reason it shouldn't work.
 
 ## Usage ##
 
-You can enable this authenticator with the folling lines in your
+You can enable this authenticator with the following lines in your
 `jupyter_config.py`:
 
 ```python
